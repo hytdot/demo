@@ -28,7 +28,6 @@ public class UserController {
         List<User> users = new ArrayList<User>();
         if (requestQuery.isEmpty()) {
             users.addAll(userService.list());
-            System.out.println("listnum="+users.size());
         }
         else {
             User user = userService.getByName(requestQuery);
