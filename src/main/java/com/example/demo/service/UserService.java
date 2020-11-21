@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.dao.UserDAO;
 import com.example.demo.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,14 +27,15 @@ public class UserService {
 
     public void addOrUpdate(User user) {
         userDAO.save(user);
+//        System.out.println("查看save函数的返回值是多少");
+//        System.out.println(userDAO.save(user));
     }
 
     public List<User> list() {
-        Sort sort = new Sort(Sort.Direction.ASC, "id");
-        return userDAO.findAll(sort);
+        return userDAO.findAll();
     }
 
-    public void deleteById(int id) {
+    public void deleteByUsername(String id) {
         userDAO.deleteById(id);
     }
 }
