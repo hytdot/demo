@@ -21,7 +21,7 @@ public class GRA {
     double maxResult = 0;
     int faultIndex = 0;
 
-//    初始化
+// todo   初始化
     public void init() {
         n = faultSamples.size() / m;
         int t = 0;

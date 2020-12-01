@@ -9,21 +9,15 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class Equipment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    int id;
-
+    @Column(name = "name")
+//   (name,model,IR_diameter,OR_diameter,thickness,roller_diameter,pitch_diameter)
     String name;
-    String supervisor;  //本来应该存id，在user表中查得username，这里为了方便直接存String
-    String state;  //故障，完好
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    String model;
+    String IR_diameter;
+    String OR_diameter;
+    String thickness;
+    String roller_diameter;
+    String pitch_diameter;
 
     public String getName() {
         return name;
@@ -33,19 +27,51 @@ public class Equipment {
         this.name = name;
     }
 
-    public String getSupervisor() {
-        return supervisor;
+    public String getModel() {
+        return model;
     }
 
-    public void setSupervisor(String supervisor) {
-        this.supervisor = supervisor;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getState() {
-        return state;
+    public String getIR_diameter() {
+        return IR_diameter;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setIR_diameter(String IR_diameter) {
+        this.IR_diameter = IR_diameter;
+    }
+
+    public String getOR_diameter() {
+        return OR_diameter;
+    }
+
+    public void setOR_diameter(String OR_diameter) {
+        this.OR_diameter = OR_diameter;
+    }
+
+    public String getThickness() {
+        return thickness;
+    }
+
+    public void setThickness(String thickness) {
+        this.thickness = thickness;
+    }
+
+    public String getRoller_diameter() {
+        return roller_diameter;
+    }
+
+    public void setRoller_diameter(String roller_diameter) {
+        this.roller_diameter = roller_diameter;
+    }
+
+    public String getPitch_diameter() {
+        return pitch_diameter;
+    }
+
+    public void setPitch_diameter(String pitch_diameter) {
+        this.pitch_diameter = pitch_diameter;
     }
 }

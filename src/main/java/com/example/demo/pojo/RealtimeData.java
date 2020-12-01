@@ -2,25 +2,27 @@ package com.example.demo.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "fault_sample")
+@Table(name = "monitor")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 
-public class FaultSample {
-    int type_id;
+public class RealtimeData {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "data_id")
+    int data_id;
     int hp;
     double de_time;
     double fe_time;
 
-    public int getType_id() {
-        return type_id;
+    public int getData_id() {
+        return data_id;
     }
 
-    public void setType_id(int type_id) {
-        this.type_id = type_id;
+    public void setData_id(int data_id) {
+        this.data_id = data_id;
     }
 
     public int getHp() {
