@@ -12,6 +12,11 @@ public class EquipmentService {
     @Autowired
     EquipmentDAO equipmentDAO;
 
+    public boolean isExist(String name) {
+        Equipment equipment = getByName(name);
+        return null != equipment;
+    }
+
     public List<Equipment> list() {
         return equipmentDAO.findAll();
     }
@@ -24,4 +29,7 @@ public class EquipmentService {
         equipmentDAO.save(equipment);
     }
 
+    public void deleteByName(String name) {
+        equipmentDAO.deleteById(name);
+    }
 }

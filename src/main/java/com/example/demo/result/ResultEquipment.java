@@ -1,7 +1,6 @@
 package com.example.demo.result;
 
 import com.example.demo.pojo.Equipment;
-import com.example.demo.pojo.User;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ public class ResultEquipment {
     //提示信息
     private String msg;
     //设备信息
-    private List<Equipment> equipment;
+    private List<Equipment> equipments;
     //设备个数
     private int total;
 
@@ -31,12 +30,12 @@ public class ResultEquipment {
         this.msg = msg;
     }
 
-    public List<Equipment> getEquipment() {
-        return equipment;
+    public List<Equipment> getEquipments() {
+        return equipments;
     }
 
-    public void setEquipment(List<Equipment> equipment) {
-        this.equipment = equipment;
+    public void setEquipments(List<Equipment> equipments) {
+        this.equipments = equipments;
     }
 
     public int getTotal() {

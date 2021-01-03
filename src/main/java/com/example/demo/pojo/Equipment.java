@@ -12,12 +12,10 @@ public class Equipment {
     @Column(name = "name")
 //   (name,model,IR_diameter,OR_diameter,thickness,roller_diameter,pitch_diameter)
     String name;
-    String model;
     String IR_diameter;
     String OR_diameter;
-    String thickness;
     String roller_diameter;
-    String pitch_diameter;
+    String type;
 
     public String getName() {
         return name;
@@ -25,14 +23,6 @@ public class Equipment {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getIR_diameter() {
@@ -51,14 +41,6 @@ public class Equipment {
         this.OR_diameter = OR_diameter;
     }
 
-    public String getThickness() {
-        return thickness;
-    }
-
-    public void setThickness(String thickness) {
-        this.thickness = thickness;
-    }
-
     public String getRoller_diameter() {
         return roller_diameter;
     }
@@ -67,11 +49,11 @@ public class Equipment {
         this.roller_diameter = roller_diameter;
     }
 
-    public String getPitch_diameter() {
-        return pitch_diameter;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setPitch_diameter(String pitch_diameter) {
-        this.pitch_diameter = pitch_diameter;
+    public String getType() {
+        return type;
     }
 }

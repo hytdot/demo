@@ -10,21 +10,66 @@ values
 ("admin","123456");
 
 create table equipment(
+type varchar(255) not null,
 name varchar(255) not null,
-model varchar(255) not null,
 IR_diameter varchar(255) not null,
 OR_diameter varchar(255) not null,
-thickness varchar(255) not null,
 roller_diameter varchar(255) not null,
-pitch_diameter varchar(255) not null,
 primary key (name)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 insert into equipment
-(name,model,IR_diameter,OR_diameter,thickness,roller_diameter,pitch_diameter)
+(type,name,IR_diameter,OR_diameter,roller_diameter)
 values
-("驱动端轴承","6205-2RS JEM SKF 深沟球轴承","25mm","52mm","15mm","7.94mm","39.04mm"),
-("风扇端轴承","6203-2RS JEM SKF 深沟球轴承","17mm","40mm","12mm","6.7462mm","28.4988mm");
+("驱动端轴承","6205-2RS JEM SKF","25mm","52mm","7.94mm"),
+("风扇端轴承","6203-2RS JEM SKF","17mm","40mm","6.7462mm");
+
+create table model(
+id int(11) unsigned not null auto_increment,
+type varchar(255) not null,
+time double(25,20) not null,
+rate double(25,20) not null,
+primary key (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table energy(
+id int(11) unsigned not null auto_increment,
+type varchar(255) not null,
+index int(11) unsigned not null,
+energy double(25,20) not null,
+primary key (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table begin_time(
+id int(11) unsigned not null auto_increment,
+name varchar(255) not null,
+year int(11) unsigned not null,
+month int(11) unsigned not null,
+day int(11) unsigned not null,
+hour int(11) unsigned not null,
+minute int(11) unsigned not null,
+second int(11) unsigned not null,
+primary key (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into begin_time
+(name,year,month,day,hour,minute,second)
+values
+("6205-2RS JEM SKF",2020,12,27,22,35,5),
+("6203-2RS JEM SKF",2020,12,27,22,35,5);
+
+create table monitor_data(
+id int(11) unsigned not null auto_increment,
+name varchar(255) not null,
+num int(11) unsigned not null,
+data double(25,20) not null,
+primary key (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table bearing_type(
+type varchar(255) not null,
+primary key (type)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table fault_sample(
 type_id int(11) unsigned not null,
